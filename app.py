@@ -48,3 +48,5 @@ with st.form(key='classification_form'):
 
             except requests.exceptions.RequestException as e:
                 st.error(f"Error while calling the API: {e}")
+                
+            
