@@ -3,6 +3,8 @@ from PIL import Image
 import requests
 import io
 import base64
+import json
+import plotly.graph_objects as go
 
 # ---------- PAGE CONFIG ----------
 st.set_page_config(page_title="Brain Tumor Classification and Segmentation Project", layout="centered")
@@ -52,7 +54,7 @@ st.markdown(
 
 # Use st.image for embedding images in Streamlit apps (HTML <img> won't display in public deployments)
 st.image(
-    "assets/3d-active-brain.gif",
+    "assets/3d-brain.gif",
     width='stretch')
 
 # ---------- PROJECT DESCRIPTION ----------
