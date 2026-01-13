@@ -41,7 +41,7 @@ st.markdown(
         box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     ">
         <h1 style='text-align: center; color: #fff; font-size: 30px; font-weight: bold; font-family: Georgia; margin: 0;'>
-            🧠 Brain Tumor Segmentation<br> 3D MRI 
+            🧠 Brain Tumor Segmentation<br> 3D MRI
         </h1>
     </div>
     """,
@@ -80,7 +80,7 @@ API_URL = f"{BASE_URL}/predict_classification"
 
 # ---------- CLASS LABELS ----------
 CLASS_LABELS = {
-    0: "   🟢 NO tumor",           
+    0: "   🟢 NO tumor",
     1: "   🟡 Meningioma tumor",
     2: "   🟡 Glioma tumor",     # Glioblastoma multiforme
     3: "   🟡 Pituitary tumor"
@@ -97,8 +97,15 @@ import streamlit as st
 st.title("Visualisation 3D depuis pickle")
 
 # chemin vers le fichier .pkl
-pkl_path = "assets/comparaison_tumeur_gt_pred.pkl"  
+pkl_path_1 = "assets/comparaison_tumeur_gt_pred.pkl"
 
-with open(pkl_path, "rb") as f:
-    fig = pickle.load(f)
-st.plotly_chart(fig, use_container_width=True)
+with open(pkl_path_1, "rb") as f1:
+    fig1 = pickle.load(f1)
+st.plotly_chart(fig1, use_container_width=True)
+
+# chemin vers le fichier .pkl
+pkl_path_2 = "assets/bad_comparaison_tumeur_gt_pred.pkl"
+
+with open(pkl_path_2, "rb") as f2:
+    fig2 = pickle.load(f2)
+st.plotly_chart(fig2, use_container_width=True, key="plot_1")
